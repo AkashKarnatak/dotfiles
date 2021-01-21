@@ -1,0 +1,22 @@
+# VERBS
+d - delete
+c - change
+y - yank(copy)
+> - indent
+< - dedent(outdent)
+gc - go comment
+gr - go replace
+
+#ACTIONS
+i - inner
+a - outer
+s - surroundings
+
+#Nouns
+w - word
+s - sentence
+p - paragraph
+3k - 3 up
+(,{,<,[,',"
+i - indent
+e - entire
