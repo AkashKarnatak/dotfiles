@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo systemctl start docker.service
+tmux new-session -c ~/GitHub/air-interview-org/air-interview -d
+tmux send-key 'docker compose -f ./docker-compose.yml -f ./docker-compose.dev.yml up -d --build' C-m
+tmux split-window -v
+tmux send-key 'docker logs air-interview-backend-app-1 -f' C-l
+tmux split-window -h
+tmux send-key 'docker exec -it air-interview-mongo-1 bash' C-l
+# don't run the below command as the mongodb hasn't been started yet
+# tmux send-key 'mongosh -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD' C-m 'use air-interview' C-m C-l
+tmux select-pane -t 0
+tmux split-window -h
+tmux attach-session -d

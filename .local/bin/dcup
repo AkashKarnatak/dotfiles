@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# enable docker
+systemctl is-active --quiet docker.service || sudo systemctl start docker.service
+
+# check if container is up
+(devcontainer exec --workspace-folder ${@:-.} printf '' > /dev/null 2>&1 \
+  || devcontainer up --workspace-folder ${@:-.}) \
+  && devcontainer exec --workspace-folder ${@:-.} bash

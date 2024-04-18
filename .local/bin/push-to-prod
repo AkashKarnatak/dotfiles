@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $HOME/GitHub/air-interview-org/air-interview
+docker compose --env-file .env.prod -f ./docker-compose.yml -f ./docker-compose.prod.yml build
+docker push akashkarnatak/air-interview:backend-app
+docker push akashkarnatak/air-interview:frontend-app

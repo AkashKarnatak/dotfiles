@@ -1,0 +1,15 @@
+#!/bin/bash
+
+tmux new-session -c ~/ws/DeepNav/realtime_inference -d
+tmux new-window -c "#{pane_current_path}"
+tmux send-key 'nvim .' C-m
+tmux select-window -t 0
+tmux send-key 'scat' C-m C-l
+tmux split-window -h -c "#{pane_current_path}"
+tmux send-key 'roscore' C-m C-l
+tmux split-window -v -c "#{pane_current_path}"
+tmux send-key 'cd ../DeepNav_data/flight_csvs/' C-m C-l
+tmux select-pane -t 0
+tmux split-window -v -c "#{pane_current_path}"
+tmux send-key 'cd ../preprocessing/' C-m C-l
+tmux attach-session -d
