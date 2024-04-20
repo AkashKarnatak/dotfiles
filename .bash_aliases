@@ -47,5 +47,8 @@ function conda {
     fi
     unset __conda_setup
   fi
+  if [ -d "/run/opengl-driver/lib" ] ; then
+    export LD_LIBRARY_PATH=/run/opengl-driver/lib
+  fi
   conda $@
 }

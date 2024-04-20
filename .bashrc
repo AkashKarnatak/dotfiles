@@ -156,6 +156,9 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# Enable hashing
+set -h
+
 # Keybinding definitions.
 
 if [ -f ~/.bash_keybindings ]; then

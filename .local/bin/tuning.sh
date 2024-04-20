@@ -1,6 +1,6 @@
 #!/bin/bash
 powertop --auto-tune
-echo 'on' > '/sys/bus/usb/devices/3-2/power/control';
+echo 'on' > '/sys/bus/usb/devices/1-2/power/control';
 
 # old
 # # best
