@@ -1,0 +1,11 @@
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+# ExecStart=/usr/local/bin/tuning.sh
+ExecStart=bash -c "powertop --auto-tune && echo 'on' > '/sys/bus/usb/devices/3-2/power/control'"
+# ExecStart=powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target

@@ -34,7 +34,7 @@ alias tvim='XDG_CONFIG_HOME=~/.nvim_custom/test/config XDG_DATA_HOME=~/.nvim_cus
 
 # lazy load conda
 function conda {
-  if [[ -z $CONDA_EXE ]]; then
+  if [[ -z $CONDA_INITIALIZED ]]; then
     __conda_setup="$('/home/akash/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
       eval "$__conda_setup"
@@ -46,6 +46,7 @@ function conda {
       fi
     fi
     unset __conda_setup
+    CONDA_INITIALIZED=1
   fi
   if [ -d "/run/opengl-driver/lib" ] ; then
     export LD_LIBRARY_PATH=/run/opengl-driver/lib

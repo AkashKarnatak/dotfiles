@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd $HOME/GitHub/nixos-config
+nvim nixos/configuration.nix
+sudo nixos-rebuild switch
