@@ -3,10 +3,13 @@ alias xopen=xdg-open
 alias diff="diff --color=always"
 alias ip='ip -color=auto'
 alias less="less -R"
+alias wget="wget --content-disposition"
 alias termux_mount="sshfs -p 8022 u0_a229@192.168.43.1:/storage/emulated/0"
 alias termux_mount_iit="sshfs -p 8022 u0_a229@172.16.11.240:/storage/emulated/0"
 alias redmi6_mount="sshfs -p 8022 u0_a302@192.168.43.253:/storage/emulated/0"
 alias cvim="nvim -c ':LoadCompe'"
+alias crajs="npx degit AkashKarnatak/react-js-tailwind-starter#master"
+
 function lt {
   ls -t --color=always $@ | head
 }
@@ -16,14 +19,9 @@ function rgf {
 
 # Python venv aliases
 alias venv_playground="conda activate playground"
-alias venv_langchain="conda activate langchain"
-alias venv_universe="conda activate universe"
 alias venv_torch="conda activate torch"
-alias venv_nlp="conda activate nlp"
-alias venv_ai_economist="conda activate ai_economist"
-alias venv_finrl="conda activate finrl"
-alias venv_whisper="conda activate whisper"
-alias venv_tf="conda activate tf"
+alias venv_ganf="conda activate ganf"
+alias venv_manim="source /home/akash/miniconda3/envs/manim/bin/activate"
 
 # Custom nvim configs
 alias chadvim='XDG_CONFIG_HOME=~/.nvim_custom/chad/config XDG_DATA_HOME=~/.nvim_custom/chad/share nvim'
