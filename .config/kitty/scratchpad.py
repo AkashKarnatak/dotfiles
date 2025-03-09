@@ -12,7 +12,7 @@ def handle_result(
 ) -> None:
     tab = boss.active_tab
     if len(tab.windows) == 1:
-        tab.new_window(cwd=tab.get_cwd_of_active_window())
+        tab.new_window(cwd=tab.get_cwd_of_active_window(), location="vsplit", bias=30)
     else:
         if tab.current_layout.name == "stack":
             tab.last_used_layout()
